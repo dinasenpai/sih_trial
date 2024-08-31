@@ -1,0 +1,24 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 75, in script
+    drpatel "It's worth it, Rohan. Microirrigation can reduce water consumption by up to 50/%. And with the right crops, we can increase our yields and improve the soil quality."
+ValueError: unsupported format character ' ' (0x20) at index 81
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 75, in script
+    drpatel "It's worth it, Rohan. Microirrigation can reduce water consumption by up to 50/%. And with the right crops, we can increase our yields and improve the soil quality."
+  File "C:\Users\samar\Downloads\chainedto\renpy-8.3.0-sdk\renpy\ast.py", line 2572, in execute
+    Say.execute(self)
+  File "C:\Users\samar\Downloads\chainedto\renpy-8.3.0-sdk\renpy\ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\samar\Downloads\chainedto\renpy-8.3.0-sdk\renpy\exports\sayexports.py", line 121, in say
+    what = what % tag_quoting_dict
+ValueError: unsupported format character ' ' (0x20) at index 81
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.3.0.24082114
+sih_trial 1.0
+Wed Aug 28 21:56:52 2024
