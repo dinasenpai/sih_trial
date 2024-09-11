@@ -1,209 +1,428 @@
-﻿# Declare characters used by this game.
-define narrator = Character("Narrator")
-define rohan = Character("Rohan")
-define drpatel = Character("Dr. Patel")
-define rukmini = Character("Rukmini")
-define kumar = Character("Kumar")
+﻿init python:
+    def play_advance_sound():
+        renpy.sound.play("audio/click.mp3")  # Replace with your sound file
 
-# The game starts here.
+# $ play_advance_sound()
+
+# Declare characters used by this game.
+define mysterious_person = Character("???")
+define m = Character("Mira", what_color="#ffc0cb")
+define mc = Character("Protagonist", what_color="#ffcc00")
+define narrate = Character("Narrator")
+
+# Scene 1: The Past
+
 label start:
 
-    # Scene 1: The Village
-    scene bg village_day
-    play music "bgm_village.ogg"
+    # Play background music
+    play music "sad_music.mp3"
+
+    # mysterious_person speaks (replace with character name later if needed)
+    mysterious_person "That time… those years of suffering… they still haunt me."
     
-    narrator "Kalagram, a village that has been struggling with water scarcity for years. The once-abundant groundwater has been depleting rapidly, threatening the livelihoods of the villagers."
+    mysterious_person "No matter how much I try to forget, they always find a way back… creeping into my thoughts like the shadows that dance on these walls."
 
-    # Scene 2: Rohan's Farm
-    scene bg farm_day
-    play music "bgm_farm.ogg"
+    mysterious_person "Something was lurking..."
+
+    mysterious_person "Something dark, something invisible..."
+
+    mysterious_person "Seeping into the water, poisoning everything it touched."
+
+    mysterious_person "At first, it was just whispers, rumours… someone’s skin had darkened… another’s hands were covered in sores… a child fell ill, and then another."
+
+    # Show a background image (replace with the appropriate background)
+    pause 1.0 # Pauses for 1 seconds
+    scene father with fade
+    pause 1.0 # Pauses for 1 seconds
+
+    mysterious_person "I remember the day my father first showed signs… his hands, strong and capable, now marked with dark spots."
+
+    mysterious_person "At first, he laughed it off, said it was nothing, just the sun playing tricks… but deep down, I saw the fear in his eyes." 
     
-    show rohan neutral at center
-    rohan "Another day, another struggle to find enough water for our crops. I wish there was a way to make our water last longer."
+    mysterious_person "He knew something was terribly wrong."
     
-    narrator "Rohan's family has been farming this land for generations. But with the water crisis worsening, he's determined to find a solution."
-
-    # Scene 3: Meeting Dr. Patel
-    scene bg village_path_day
-    play sound "sfx_footsteps.ogg"
+    mysterious_person "Days turned into weeks… and the sickness spread like wildfire." 
     
-    show drpatel neutral at right
-    show rohan neutral at left
+    mysterious_person "The wells, the ponds… they were all tainted. We tried to understand… tried to fight back…" 
     
-    drpatel "Rohan, my boy, I've been studying the water table in Kalagram. We need to take drastic measures to conserve our groundwater. We can't keep relying on traditional farming methods."
+    mysterious_person "But how do you fight what you cannot see? How do you protect yourself from the very water you need to survive?"
+
+    # Show a new background image (e.g. a darkening village or affected environment)
+    pause 1.0 # Pauses for 1 seconds
+    scene people_suffering with dissolve
+    pause 1.0 # Pauses for 1 seconds
+
+    mysterious_person "And then, the tragedy began." 
     
-    rohan "What do you suggest, Doctor? I'm willing to try anything to save our farm."
+    mysterious_person "My neighbours, my friends… one by one, they fell." 
     
-    drpatel "I recommend we implement microirrigation. It's a more efficient way to water your crops, and it will help reduce our water consumption."
-
-    # Choice 1
-    menu:
-        "Implement microirrigation on your farm":
-            jump choices1_a
-
-        "Stick to traditional flood irrigation":
-            jump choices1_b
-
-        "Ask Dr. Patel about other options":
-            jump choices1_c
-
-label choices1_a:
-    narrator "You choose to implement microirrigation, learning about its benefits and starting the process on your farm."
-    jump scene4
-
-label choices1_b:
-    narrator "You choose to stick with traditional flood irrigation. The groundwater levels deplete faster, and the village faces a severe drought."
-    jump drought_ending
-
-label choices1_c:
-    narrator "You ask Dr. Patel about other conservation practices but decide not to implement microirrigation immediately."
-    jump scene4
-
-label scene4:
-
-    # Scene 4: Implementing Microirrigation
-    scene bg farm_day
-    play music "bgm_farm.ogg"
+    mysterious_person "The funerals became a daily ritual, the wails of mourning a constant echo through our village."
     
-    show rohan neutral at left
-    show drpatel neutral at right
+    mysterious_person "Every day, I watched the smoke rise… thick and dark against the sky." 
     
-    drpatel "First, we need to install a network of pipes and tubes to deliver water directly to the roots of the plants. Then, we'll use a pump to pressurize the water and distribute it evenly."
-    
-    rohan "That sounds like a lot of work. But if it will save us water, I'm willing to try it."
-    
-    drpatel "It's worth it, Rohan. Microirrigation can reduce water consumption by up to 50\%. And with the right crops, we can increase our yields and improve the soil quality."
+    mysterious_person "I remember the taste of ashes on my tongue… the smell of burning wood, the cries of the grieving… it was all too much."
 
-    # Scene 5: Meeting Rukmini
-    scene bg farm_day
-    play sound "sfx_working.ogg"
+    mysterious_person "Arsenic… a word that came to define our lives, our deaths… a poison that seeped into our blood, our bones…" 
     
-    show rukmini neutral at right
-    show rohan neutral at left
+    mysterious_person "…leaving us hollow and broken."
+
+    # Show another background (perhaps a burning pyre or a darkened sky)
+    pause 1.0 # Pauses for 1 seconds
+    scene sad_bg with fade
+    pause 1.0 # Pauses for 1 seconds
+
+    mysterious_person "I watched my father wither away, day by day… his body consumed by pain." 
     
-    rukmini "Rohan, I'm so proud of you for taking steps to conserve water. But we need to do more. We need to diversify our crops and reduce our reliance on water-intensive crops like paddy and sugarcane."
+    mysterious_person "My mother, once so strong, was a shadow of herself, trying to hold us together, trying to find hope where there was none."
     
-    rohan "I agree, but what can we plant instead?"
+    mysterious_person "And all I could do was watch… helpless… terrified…" 
     
-    rukmini "We can plant millets and pulses. They're more drought-resistant and require less water. Plus, they're nutritious and can improve the soil quality."
+    mysterious_person "…knowing that the same fate awaited us all."
 
-    # Choice 2
-    menu:
-        "Plant millets and pulses":
-            jump choices2_a
+    # Background of a darkened village or sick individuals
+    pause 1.0 # Pauses for 1 seconds
+    scene people_suffering_2 with dissolve
+    pause 1.0 # Pauses for 1 seconds
 
-        "Stick to traditional crops":
-            jump choices2_b
-
-        "Ask Rukmini about other options":
-            jump choices2_c
-
-label choices2_a:
-    narrator "You choose to plant millets and pulses, learning about the benefits of crop diversification and starting the process on your farm."
-    jump scene6
-
-label choices2_b:
-    narrator "You choose to stick with traditional crops. The water consumption increases, and the groundwater levels deplete faster."
-    jump drought_ending
-
-label choices2_c:
-    narrator "You ask Rukmini about other conservation practices but decide not to diversify your crops immediately."
-    jump scene6
-
-label scene6:
-
-    # Scene 6: Kumar's Offer
-    scene bg farm_day
-    play sound "sfx_footsteps.ogg"
+    mysterious_person "Years passed, but the scars remain… in the land, in our hearts… in our memories." 
     
-    show kumar neutral at right
-    show rohan neutral at left
-    show rukmini neutral at center
+    mysterious_person "I still hear their cries… those who were lost… those who suffered… because of something we never saw coming."
     
-    kumar "Rohan, I'll give you a good price for your groundwater. You can sell it to me, and I'll take care of the rest."
+    mysterious_person "Over 20 million people suffered in West Bengal, 10 million in Bihar… all victims of the unseen poison." 
     
-    rohan "I don't know, Kumar. I'm not sure I want to sell our water."
-    
-    kumar "Come on, Rohan. You need the money, and I need the water. It's a win-win situation."
-    
-    rukmini "Rohan, don't do it. Selling our water will only make things worse. We need to conserve it, not sell it."
+    mysterious_person "Arsenic in the water brought severe pain – skin lesions, cancers of the skin, bladder, and lung, hearts that failed, children born with poisoned blood."
 
-    # Choice 3
-    menu:
-        "Accept Kumar's offer":
-            jump choices3_a
-
-        "Reject Kumar's offer":
-            jump choices3_b
-
-        "Negotiate with Kumar":
-            jump choices3_c
-
-label choices3_a:
-    narrator "You choose to accept Kumar's offer. The groundwater levels deplete rapidly, and the village faces severe water scarcity."
-    jump drought_ending
-
-label choices3_b:
-    narrator "You choose to reject Kumar's offer, learning about the importance of sustainable groundwater management and starting to implement conservation practices."
-    jump scene7
-
-label choices3_c:
-    narrator "You choose to negotiate with Kumar, learning about the importance of balancing economic and environmental needs."
-    jump scene7
-
-label scene7:
-
-    # Scene 7: Artificial Recharge
-    scene bg farm_day
-    play sound "sfx_construction.ogg"
+    mysterious_person "Thousands died; countless more suffered with arsenicosis – darkened skin, gangrene, cancers." 
     
-    show drpatel neutral at right
-    show rohan neutral at left
+    mysterious_person "The poison was relentless… spreading silently, claiming lives and destroying dreams." 
     
-    drpatel "We can build a recharge well and collect rainwater to replenish the groundwater. It's a simple and effective way to increase our water table."
+    mysterious_person "Our homes turned into graves; our bodies marked by the water we once trusted." 
     
-    rohan "That sounds like a great idea, Doctor. Let's do it."
+    mysterious_person "This was not just a tragedy…" 
     
-    drpatel "Excellent decision, Rohan. Artificial recharge can increase groundwater levels and improve water quality."
+    mysterious_person "It was a slow, cruel massacre."
 
-    # Scene 8: Watershed Management
-    scene bg village_hill_day
-    play sound "sfx_nature.ogg"
-    
-    show rukmini neutral at right
-    show rohan neutral at left
-    
-    rukmini "We can plant trees and grasses on the slopes to reduce runoff and increase infiltration. It's a simple and effective way to manage our watershed."
-    
-    rohan "That's a great idea, Rukmini. Let's do it."
-    
-    rukmini "Excellent decision, Rohan. Watershed management can reduce runoff, increase groundwater recharge, and improve the water quality."
+    # Show a final background representing loss and emptiness (perhaps an empty village or a desolate landscape)
+    pause 1.0 # Pauses for 1 seconds
+    scene sad_bg with fade
+    pause 1.0 # Pauses for 1 seconds
 
-    # Scene 9: The Harvest
-    scene bg farm_harvest
-    play music "bgm_harvest.ogg"
+    mysterious_person "But this… this was just one story… one of many." 
     
-    show rohan happy at center
-    show rukmini happy at right
+    mysterious_person "Across our land, such tragedies have played out again and again…" 
     
-    rohan "Look, Rukmini! Our crops are thriving! We've never had a better harvest."
+    mysterious_person "Different places, different people, but the same fate…" 
     
-    rukmini "It's all thanks to our conservation efforts, Rohan. We've reduced our water consumption, and our crops are more resilient to drought."
+    mysterious_person "…the same suffering."
     
-    show drpatel happy at left
-    drpatel "Congratulations, Rohan and Rukmini! You've shown that with the right conservation practices, we can manage our groundwater sustainably and improve our livelihoods."
-
-    # Ending
-    narrator "The game ends with a message about the importance of sustainable groundwater management and the benefits of conservation practices. The player is encouraged to continue exploring and learning about groundwater conservation."
-
-    # Epilogue
-    narrator "As the player continues to explore the game, they can learn more about groundwater conservation and management. They can also experiment with different conservation practices and see the consequences of their choices. The game ends with a sense of hope and empowerment, encouraging the player to take action to protect their own water resources."
-
-    return
-
-label drought_ending:
+    mysterious_person "And I… I wish… oh, how I wish…" 
     
-    scene bg drought_farm
+    mysterious_person "That I could go back… back to that time… to those days before it all began…" 
+    
+    mysterious_person "To warn them… to save them… to change what happened."
 
-    narrator "The village faces a severe drought due to unsustainable practices. The game ends with a message about the consequences of poor water management and the importance of conservation."
+    mysterious_person "But I cannot… I am bound by time, by fate… and all I have left are these memories…"
+    
+    mysterious_person "…memories of a tragedy that took everything from us."
+
+    stop music fadeout 1.0
+
+    scene black
+
+    pause 2.0
+
+# Scene 2: Waking Up
+
+label Waking_Up:
+    
+    # Female voice gradually getting louder
+    mysterious_person "…ir"
+    pause 1.0
+    mysterious_person "…Sir"
+    pause 1.0
+    mysterious_person "SIR !!!"
+    pause 1.0
+    
+    # Show waking up background
+    scene wake_up with fade
+
+    # Background music
+    play music "peace_music.mp3"
+    pause 1.0
+    
+    # Mira's dialogue
+    mysterious_person "Again? Really, you’ve done it again… another night without sleep?"
+    
+    # Protagonist slowly waking up
+    
+    pause 1.0
+    narrate "(You slowly wake up.)"
+    pause 1.0
+    mc "Hm… what? Oh, it's you, Mira..."
+    mc "Just… just a few more minutes." 
+    mc "I was so close to connecting these data points from last year’s reports."
+    
+    # Mira responds
+    m "Data points? You mean another ‘brilliant idea’ you had at 3 a.m.?" 
+    m "Doctor, you need to rest! You can’t solve any crisis on three hours of sleep."
+    narrate "(Mira sits beside you.)"
+    pause 1.0
+    
+    # Play sound of chair being pulled
+    play sound "chair_pull.mp3"
+    
+    # Show background of Mira sitting beside the protagonist
+    pause 1.0
+    scene scene1 with dissolve
+    pause 1.0
+
+    show old_mc1 at Position(xpos=0.25, ypos=1.0) with dissolve
+    show assistant at Position(xpos=0.75, ypos=1.0) with dissolve
+
+    # Protagonist responds
+    mc "Come on, Mira, you know how it is… once you start digging through those old surveys and charts, it’s hard to stop."
+    mc "There's always one more variable to consider or another trend to analyse."
+    mc "But I know… I know." 
+    mc "I’ve been at it a bit too long."
+    
+    # Mira worried
+    m "A bit? You look like you’ve aged ten years overnight." 
+    m "And don’t think I haven’t noticed the reports piling up in the corner or those letters from the council you’ve yet to open."
+    m "We’re supposed to be working on the awareness campaign for the town hall meeting…" 
+    m "…the one where you convince people not to dig their wells any deeper?"
+    
+    # Protagonist focused on the research
+    mc "Yes, yes, the campaign. I promise I’ll focus… after I finish this analysis."
+    mc "Just think, Mira… if we can show them the rate of depletion over the last decade, how we’re draining the aquifers faster than they can recharge—"
+    
+    # Mira interrupts
+    m "Yes, I know. The ‘draining the veins of the earth’ speech. I’ve heard it a hundred times…" 
+    m "But you’re not going to convince anyone if you collapse in the middle of it."
+    m "Look, I’m worried about you. You’re not just some machine that can run on numbers and research alone."
+    
+    # Protagonist remains persistent
+    mc "I’m fine, Mira. Really. I just… can’t help myself sometimes."
+    mc "There’s too much at stake." 
+    mc "People don’t realize… the water table’s dropping, and nobody’s paying attention."
+    mc "And if I don’t do it, then who will?"
+    
+    # Mira reassures the protagonist
+    m "I know… I know. But promise me you’ll take a break today? At least long enough to eat something."
+    
+    # Protagonist agrees
+    mc "Alright, I promise. A break… but only if you promise to help me with these charts later."
+
+    hide assistant with dissolve
+    hide old_mc1 with dissolve
+    
+    # Mira responds
+    
+    show assistant at center with dissolve
+    m "Deal. But breakfast first."
+    
+    # Sound of Mira pulling the protagonist by the arm
+    pause 1.0
+    play sound "rustle.mp3"
+    pause 1.0
+    
+    # Scene of protagonist standing reluctantly
+    narrate "(She pulls you by the arm.)"
+
+    hide assistant with dissolve
+    show old_mc1 at center with dissolve
+
+    narrate "(You stand, reluctantly being pulled away from your desk, with your eyes lingering on the research papers.)"
+
+    hide old_mc1 with dissolve
+    
+    
+    # Fade out
+    pause 1.0
+    scene black with fade
+    pause 1.0
+
+    # Monologue - Protagonist reflecting on daily struggles
+    mc "Each day feels like a race against an invisible clock."
+    mc "The mornings come early, the light breaking over the skyline while I’m already pouring over yesterday’s reports, looking for patterns, searching for answers."
+    mc "Coffee grows cold as I juggle calls, meetings, and presentations… officials nod politely but their eyes glaze over." 
+    mc "School children seem more interested, but their parents remain sceptical."
+    mc "Afternoon turns into a blur of voices, discussions in crowded community halls, on dusty streets, under the scorching sun… trying to make them care."
+    mc "I feel the weight of their disbelief, their dismissive smiles."
+    mc "And when the sun sets, my workday is far from over." 
+    mc "Back to the office, more research and hopes pinned on the next big idea."
+
+    stop music fadeout 1.0
+
+    # End scene
+
+# Scene: Late Night
+
+label Late_Night:
+
+    # Background image for the street (replace 'bg_street_night' with your own image)
+    scene empty_streets with fade
+
+    # Footsteps sound
+    play sound "footsteps.mp3"  # Replace with actual file
+
+    show old_mc1 at center with dissolve
+
+    # Dialogue of mc
+    mc "Tomorrow’s speech… it has to reach them."
+    mc "I need to find the right words…" 
+    mc "Something to break through their apathy and make them understand that this isn’t just about numbers on a chart."
+
+    hide old_mc1 with dissolve
+
+    # Footsteps slow down and background sound of wind
+    play sound "wind_blows.mp3"  # Optional, replace with actual sound
+
+    # mc notices the eerie street
+    narrate "(You turn at a corner, footsteps slowing down as you look around the deserted street, with a hint of unease across your face.)"
+    
+    # A strange sound emerges
+    play music "suspense.mp3"
+    
+    pause 1.0
+    scene message with dissolve
+    pause 2.0
+
+    scene empty_streets with fade
+    pause 1.0
+
+    show old_mc1 at center with dissolve
+
+    mc "What… what was that?"
+
+    hide old_mc1 with dissolve
+
+    narrate "(You look in all directions, peering into the shadows cast by the streetlights.)"
+
+    show old_mc1 at center with dissolve
+
+    mc "Hello? Who’s there?"
+
+    hide old_mc1 with dissolve
+
+    narrate "(There’s no response, just the hum growing slightly louder, then fading into the night air.)"
+
+    show old_mc1 at center with dissolve
+
+    mc "Must be my mind playing tricks… too many late nights must be giving me stress."
+
+    hide old_mc1 with dissolve
+
+    stop music fadeout 1.0
+
+    # mc reaches the apartment
+    narrate "(You try to dismiss the unease, and continue walking, reaching your apartment building a few minutes later.)"
+
+    play sound "footsteps_small.mp3"
+
+    narrate "(You fumble with the keys, glancing over your shoulder one last time before entering.)"
+
+    # Scene: Inside the Apartment
+    scene apartment with dissolve
+
+    pause 1.0
+
+    play sound "door_unlock.mp3"
+
+    play music "night_music.mp3"
+
+    show old_mc1 at center with dissolve
+
+    mc "Finally... home."
+
+    hide old_mc1 with dissolve
+    
+    narrate "(You sit down, rubbing your temples, muttering to yourself as you pick up a sheet of paper filled with scribbles.)"
+
+    show old_mc1 at center with dissolve
+    
+    mc "Alright… focus… the speech. Just need to get it right. I need something that cuts deep… something that leaves them no choice but to listen."
+    
+    mc "The water we waste today… no, no… that’s too weak… we need… we need to hit them with the numbers… remind them of what’s already lost…"
+
+    hide old_mc1 with dissolve
+
+    # Show time passing, and fading to later hours
+    narrate "(Time passes, the clock ticks loudly on the wall as you're lost in thought, with the night stretching on.)"
+    
+    narrate "(The scene darkens slightly and it's already 4 a.m.)"
+
+    show old_mc1 at center with dissolve
+    
+    mc "4 am… again… Mira’s going to kill me."
+
+    mc "Just need a few hours of sleep… got to be sharp for tomorrow… got to make them care."
+
+    hide old_mc1 with dissolve
+
+    stop music fadeout 1.0
+
+    # mc goes to bed
+    narrate "(You collapse onto the bed, your body sinking into the mattress. Your eyes close almost immediately...)"
+
+    # The strange sound returns
+    narrate "(...but as soon as you do, the strange sound returns – a low hum, then a whisper, barely audible but distinct.)"
+
+    pause 1.0
+    scene message with dissolve
+    pause 2.0
+
+    scene apartment with dissolve
+    pause 1.0
+
+    play music "mystical_music.mp3"
+
+    show old_mc1 at center with dissolve
+
+    mc "What…? Is that…?"
+    mc "Who’s there?!"
+    
+    # The sound grows louder and the room begins to warp
+    pause 1.0
+    scene message with dissolve
+    pause 2.0
+
+    scene apartment with dissolve
+    pause 1.0
+    
+    narrate "(You jump up, looking around wildly, but the room is the same – familiar yet now filled with an eerie, unexplainable tension.)"
+    narrate "(Your breath quickens, eyes darting from corner to corner.)"
+
+    show old_mc1 at center with dissolve
+    
+    mc "Show yourself! Who are you?! What do you want?!"
+
+    hide old_mc1 with dissolve
+    
+    # The room starts to warp
+    pause 1.0
+    scene apartment_warped with dissolve
+    
+    pause 2.0
+    scene message_complete with dissolve
+    
+    pause 2.0
+    scene apartment_warped with dissolve
+    pause 1.0
+
+    narrate "(The voice grows louder, the walls seeming to pulse with the sound.)"
+    narrate "(The room begins to warp, the edges blurring, as if reality itself is bending around him.)"
+
+    pause 1.0
+    scene black with dissolve
+    pause 1.0
+    
+    mc "What… what is happening? Am I… am I dreaming?"
+    
+    pause 1.0
+
+    narrate "(You blink rapidly, trying to clear your vision, but when your eyes open again, the sight leaves you utterly dumbfounded.)"
+    narrate "(The room has transformed – into a place you do not recognize, filled with blinding light and shadow, a different presence all around.)"
+
+    stop music fadeout 1.0
+
     return
