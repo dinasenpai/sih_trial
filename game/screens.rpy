@@ -297,7 +297,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action [Start(),StopMusic()]
 
         else:
 
@@ -331,15 +331,20 @@ screen navigation():
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
-style navigation_button is gui_button
-style navigation_button_text is gui_button_text
+style navigation_button_text:
+    properties gui.text_properties("navigation_button")
+    bold True  # Bold text.
+    color "#F08080"  # Default text color (Blue).
 
+    hover_color "#FF0000"  # Text color when hovered (Red).
+
+    # Optionally, you can specify a custom font.
+    font "gui/font/Genshin.ttf"  # Replace this with the path to the desired font file.
+    
 style navigation_button:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
 
-style navigation_button_text:
-    properties gui.text_properties("navigation_button")
 
 
 ## Main Menu screen ############################################################
@@ -353,7 +358,10 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
+    $renpy.sound.play("starting.mp3", loop=True)
+    
     add gui.main_menu_background
+    
 
     ## This empty frame darkens the main menu.
     frame:
@@ -374,6 +382,9 @@ screen main_menu():
             text "[config.version]":
                 style "main_menu_version"
 
+init python:
+    def StopMusic():
+        renpy.music.stop()
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
